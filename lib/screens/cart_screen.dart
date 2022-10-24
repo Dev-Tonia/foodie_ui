@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:foodie/components/colors.dart';
 import 'package:foodie/components/constant.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:foodie/widgets/checkout_card.dart';
+import 'package:foodie/widgets/custom_button.dart';
 
 import '../widgets/cart_item.dart';
-import '../widgets/custom_slidable_action.dart';
-import '../widgets/customized_slidable_action.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);
@@ -63,6 +60,8 @@ class CartScreen extends StatelessWidget {
                 imageUrl: 'assets/images/cartimage.png',
                 foodTitle: 'Fishwith mix orange....',
               ),
+              const Spacer(),
+              const CustomButton(title: 'Complete order')
             ],
           ),
         ),
