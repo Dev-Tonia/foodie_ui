@@ -4,6 +4,7 @@ import 'package:foodie/components/constant.dart';
 import 'package:foodie/widgets/custom_button.dart';
 
 import '../utils/enums.dart';
+import '../widgets/personal_details_card.dart';
 import '../widgets/radio_button.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -37,51 +38,8 @@ class ProfileScreen extends StatelessWidget {
                 style: AppConstant.textStyle(size: 17),
               ),
               AppConstant.searchScreenSpacer(height: 12),
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.only(
-                  top: 20,
-                  bottom: 26,
-                  left: 16,
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Image.asset('assets/images/Rectangle 6.png'),
-                    AppConstant.searchScreenSpacer(width: 16),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Marvis Ighedosa',
-                          style: AppConstant.textStyle(),
-                        ),
-                        AppConstant.searchScreenSpacer(height: 9),
-                        Text(
-                          'dosamarvis@gmail.com',
-                          style: AppConstant.textStyle(
-                            color: const Color(0x80000000),
-                            size: 13,
-                            weight: FontWeight.w400,
-                          ),
-                        ),
-                        AppConstant.searchScreenSpacer(height: 9),
-                        Text(
-                          'No 15 uti street off ovie palace \nroad effurun delta state',
-                          style: AppConstant.textStyle(
-                            color: const Color(0x80000000),
-                            size: 13,
-                            weight: FontWeight.w400,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+              const PersonalDetailsCard(
+                imageUrl: 'assets/images/Rectangle 6.png',
               ),
               AppConstant.searchScreenSpacer(
                 height: 46,
