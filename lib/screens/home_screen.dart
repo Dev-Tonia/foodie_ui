@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodie/components/colors.dart';
 import 'package:foodie/widgets/input_form.dart';
+import 'package:foodie/widgets/navigation_drawer.dart';
 import '../widgets/home_card.dart';
 import '../widgets/home_text.dart';
 
@@ -17,6 +18,17 @@ class _HomeScreenState extends State<HomeScreen> {
     var currentIndex = 0;
     return SafeArea(
       child: Scaffold(
+        drawer: const NavigationDrawer(),
+        appBar: AppBar(
+          actions: const [
+            Padding(
+              padding: EdgeInsets.only(right: 50),
+              child: Icon(
+                Icons.shopping_cart,
+              ),
+            ),
+          ],
+        ),
         backgroundColor: AppColors.screenColor,
         body: Container(
           padding: const EdgeInsets.only(left: 50),
@@ -32,14 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Icon(
-                      Icons.menu_open_outlined,
-                    ),
-                    Icon(
-                      Icons.shopping_cart,
-                    ),
-                  ],
+                  children: const [],
                 ),
               ),
               const Text(
