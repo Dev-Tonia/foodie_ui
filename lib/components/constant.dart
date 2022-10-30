@@ -13,6 +13,7 @@ class AppConstant {
     double height = 1.2,
     FontWeight weight = FontWeight.w600,
     Color? color,
+    Color? backgroundColor,
   }) {
     return TextStyle(
       fontSize: size,
@@ -20,6 +21,7 @@ class AppConstant {
       fontFamily: 'SF Pro Rounded',
       fontWeight: weight,
       color: color,
+      backgroundColor: backgroundColor,
     );
   }
 }

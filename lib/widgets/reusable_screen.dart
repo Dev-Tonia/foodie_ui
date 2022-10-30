@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie/components/constant.dart';
 
 import '../components/colors.dart';
 import 'custom_button.dart';
@@ -6,50 +7,26 @@ import 'custom_button.dart';
 class ReusableScreen extends StatelessWidget {
   const ReusableScreen({
     Key? key,
-    required this.title,
     required this.bodyText,
     required this.bodySubText,
-    required this.bodyIcon,
+    required this.imageUrl,
   }) : super(key: key);
 
-  final String title;
   final String bodyText;
   final String bodySubText;
 
-  final IconData bodyIcon;
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(right: 165, top: 10, left: 50),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const IconButton(
-                onPressed: null,
-                icon: Icon(
-                  Icons.arrow_back_ios,
-                ),
-              ),
-              Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 18,
-                  height: 1.2,
-                  fontFamily: 'SF Pro Rounded',
-                  fontWeight: FontWeight.w600,
-                ),
-              )
-            ],
-          ),
-        ),
-        const Spacer(),
-        Icon(
-          bodyIcon,
-          size: 106,
-          color: AppColors.iconColor,
+        Spacer(),
+        Image.asset(
+          imageUrl,
+          height: 118,
+          width: 107,
         ),
         const SizedBox(
           height: 27,
@@ -66,19 +43,16 @@ class ReusableScreen extends StatelessWidget {
         const SizedBox(
           height: 17,
         ),
-        Text(
-          bodySubText,
-          textAlign: TextAlign.center,
-          style: const TextStyle(
-              fontSize: 17,
-              height: 1.2,
-              fontFamily: 'SF Pro Rounded',
-              fontWeight: FontWeight.w400),
-        ),
+        Text(bodySubText,
+            textAlign: TextAlign.center,
+            style: AppConstant.textStyle(weight: FontWeight.w400, size: 17)),
         const Spacer(),
-        const Padding(
+        Padding(
           padding: EdgeInsets.only(right: 50, left: 50),
-          child: CustomButton(title: 'Start odering'),
+          child: CustomButton(
+            title: 'Start odering',
+            onPressed: () {},
+          ),
         ),
         const SizedBox(
           height: 45,

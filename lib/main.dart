@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart';
+import 'package:foodie/components/colors.dart';
+import 'package:foodie/screens/search_result_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,8 +12,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomeScreen(),
+    return MaterialApp(
+      theme: Theme.of(context).copyWith(
+        colorScheme: Theme.of(context).colorScheme.copyWith(
+              primary: AppColors.screenColor,
+            ),
+      ),
+      home: const SearchResultScreen(),
     );
   }
 }

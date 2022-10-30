@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodie/components/colors.dart';
+import 'package:foodie/widgets/custom_appbar.dart';
 import '../widgets/reusable_screen.dart';
 
 class HistoryScreen extends StatelessWidget {
@@ -7,14 +8,18 @@ class HistoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      appBar: CustomAppBar(
+        leadingIcon: Icons.arrow_back_ios,
+        leaddingOnTap: () {},
+        title: 'History',
+      ),
       backgroundColor: AppColors.screenColor,
-      body: SafeArea(
+      body: const SafeArea(
         child: ReusableScreen(
-          title: 'History',
           bodyText: 'No history yet',
           bodySubText: 'Hit the orange button down \nbelow to Create an order',
-          bodyIcon: Icons.border_outer_rounded,
+          imageUrl: 'assets/images/Vector (10).png',
         ),
       ),
     );

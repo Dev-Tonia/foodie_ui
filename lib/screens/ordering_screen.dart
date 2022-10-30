@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodie/components/colors.dart';
+import '../widgets/custom_appbar.dart';
 import '../widgets/reusable_screen.dart';
 
 class OrderingScreen extends StatelessWidget {
@@ -7,14 +8,18 @@ class OrderingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      appBar: CustomAppBar(
+        leadingIcon: Icons.arrow_back_ios,
+        leaddingOnTap: () {},
+        title: 'History',
+      ),
       backgroundColor: AppColors.screenColor,
-      body: SafeArea(
+      body: const SafeArea(
         child: ReusableScreen(
-          title: 'Orders',
           bodyText: 'No orders yet',
           bodySubText: 'Hit the orange button down\nbelow to Create an order',
-          bodyIcon: Icons.shopping_cart,
+          imageUrl: 'assets/images/cart_download.png',
         ),
       ),
     );

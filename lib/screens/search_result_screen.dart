@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodie/components/colors.dart';
 import 'package:foodie/components/constant.dart';
+import 'package:foodie/widgets/custom_appbar.dart';
 import 'package:foodie/widgets/home_card.dart';
 import 'package:foodie/widgets/search_card.dart';
 
@@ -11,24 +12,14 @@ class SearchResultScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+          appBar: CustomAppBar(
+            leaddingOnTap: () {},
+            leadingIcon: Icons.arrow_back_ios,
+            title: 'Spicy chieckns',
+          ),
           backgroundColor: AppColors.screenColor,
           body: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 165, top: 10, left: 50),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Icon(
-                      Icons.arrow_back_ios,
-                    ),
-                    Text(
-                      'Spicy chieckns',
-                      style: AppConstant.textStyle(),
-                    )
-                  ],
-                ),
-              ),
               const SizedBox(
                 height: 30,
               ),

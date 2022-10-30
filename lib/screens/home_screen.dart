@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:foodie/components/colors.dart';
 import 'package:foodie/widgets/input_form.dart';
@@ -12,141 +14,157 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
+var scaffoldKey = GlobalKey<ScaffoldState>();
+
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     var currentIndex = 0;
+
     return SafeArea(
       child: Scaffold(
+        key: scaffoldKey,
         drawer: const NavigationDrawer(),
         appBar: AppBar(
-          actions: const [
+          elevation: 0.0,
+          leading: GestureDetector(
+            onTap: () {
+              scaffoldKey.currentState?.openDrawer();
+            },
+            child: Image.asset(
+              'assets/images/Vector (9).png',
+            ),
+          ),
+          actions: [
             Padding(
-              padding: EdgeInsets.only(right: 50),
-              child: Icon(
-                Icons.shopping_cart,
+              padding: const EdgeInsets.only(right: 50),
+              child: GestureDetector(
+                onTap: () {},
+                child: Image.asset('assets/images/shopping-cart.png'),
               ),
             ),
           ],
         ),
         backgroundColor: AppColors.screenColor,
-        body: Container(
-          padding: const EdgeInsets.only(left: 50),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(
-                  right: 42,
-                  left: 4.3,
-                  bottom: 40,
-                  top: 5,
+        body: SingleChildScrollView(
+          child: Container(
+            padding: const EdgeInsets.only(left: 50),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                    right: 42,
+                    left: 4.3,
+                    bottom: 40,
+                    top: 5,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [],
+                  ),
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [],
+                const Text(
+                  'Delicious \nfood for you',
+                  style: TextStyle(
+                      fontFamily: 'SF Pro Rounded',
+                      fontSize: 34,
+                      height: 1.2,
+                      fontWeight: FontWeight.w700),
                 ),
-              ),
-              const Text(
-                'Delicious \nfood for you',
-                style: TextStyle(
-                    fontFamily: 'SF Pro Rounded',
-                    fontSize: 34,
-                    height: 1.2,
-                    fontWeight: FontWeight.w700),
-              ),
-              const SizedBox(
-                height: 28,
-              ),
-              InputField(
-                onChanged: (x) {},
-                filled: true,
-                hintText: 'Search',
-                prefixIcon: const Icon(
-                  Icons.search,
-                  color: Colors.black,
+                const SizedBox(
+                  height: 28,
                 ),
-                inputBorder: UnderlineInputBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                  borderSide: BorderSide.none,
+                InputField(
+                  onChanged: (x) {},
+                  filled: true,
+                  hintText: 'Search',
+                  prefixIcon: const Icon(
+                    Icons.search,
+                    color: Colors.black,
+                  ),
+                  inputBorder: UnderlineInputBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                    borderSide: BorderSide.none,
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    HomeText(
-                      title: 'Food',
-                    ),
-                    HomeText(
-                      title: 'Drinks',
-                    ),
-                    HomeText(
-                      title: 'Snacks',
-                    ),
-                    HomeText(
-                      title: 'Sauce',
-                    ),
-                    HomeText(
-                      title: 'Snacks',
-                    ),
-                    HomeText(
-                      title: 'Sauce',
-                    ),
-                  ],
+                const SizedBox(
+                  height: 40,
                 ),
-              ),
-              const SizedBox(
-                height: 100,
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: const [
-                    HomeCard(
-                      imageString: 'assets/images/image 2.png',
-                      title: 'Veggie \ntomato mix',
-                      price: 'N1,900',
-                      width: 220,
-                      height: 270,
-                    ),
-                    SizedBox(
-                      width: 34,
-                    ),
-                    HomeCard(
-                      imageString: 'assets/images/image 2.png',
-                      title: 'Spicy fish \nsauce',
-                      price: 'N2,300',
-                      width: 220,
-                      height: 270,
-                    ),
-                    SizedBox(
-                      width: 34,
-                    ),
-                    HomeCard(
-                      imageString: 'assets/images/image 2.png',
-                      title: 'Veggie \ntomato mix',
-                      price: 'N1,900',
-                      width: 220,
-                      height: 270,
-                    ),
-                    SizedBox(
-                      width: 34,
-                    ),
-                    HomeCard(
-                      imageString: 'assets/images/image 2.png',
-                      title: 'Spicy fish \nsauce',
-                      price: 'N2,300',
-                      width: 220,
-                      height: 270,
-                    ),
-                  ],
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      HomeText(
+                        title: 'Food',
+                      ),
+                      HomeText(
+                        title: 'Drinks',
+                      ),
+                      HomeText(
+                        title: 'Snacks',
+                      ),
+                      HomeText(
+                        title: 'Sauce',
+                      ),
+                      HomeText(
+                        title: 'Snacks',
+                      ),
+                      HomeText(
+                        title: 'Sauce',
+                      ),
+                    ],
+                  ),
                 ),
-              )
-            ],
+                const SizedBox(
+                  height: 100,
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: const [
+                      HomeCard(
+                        imageString: 'assets/images/image 2.png',
+                        title: 'Veggie \ntomato mix',
+                        price: 'N1,900',
+                        width: 220,
+                        height: 270,
+                      ),
+                      SizedBox(
+                        width: 34,
+                      ),
+                      HomeCard(
+                        imageString: 'assets/images/image 2.png',
+                        title: 'Spicy fish \nsauce',
+                        price: 'N2,300',
+                        width: 220,
+                        height: 270,
+                      ),
+                      SizedBox(
+                        width: 34,
+                      ),
+                      HomeCard(
+                        imageString: 'assets/images/image 2.png',
+                        title: 'Veggie \ntomato mix',
+                        price: 'N1,900',
+                        width: 220,
+                        height: 270,
+                      ),
+                      SizedBox(
+                        width: 34,
+                      ),
+                      HomeCard(
+                        imageString: 'assets/images/image 2.png',
+                        title: 'Spicy fish \nsauce',
+                        price: 'N2,300',
+                        width: 220,
+                        height: 270,
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(

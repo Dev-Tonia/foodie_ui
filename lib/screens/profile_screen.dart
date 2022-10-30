@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodie/components/colors.dart';
 import 'package:foodie/components/constant.dart';
+import 'package:foodie/widgets/custom_appbar.dart';
 import 'package:foodie/widgets/custom_button.dart';
 
 import '../utils/enums.dart';
@@ -14,6 +15,11 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: CustomAppBar(
+          leaddingOnTap: () {},
+          leadingIcon: Icons.arrow_back_ios,
+          title: 'My profile',
+        ),
         backgroundColor: AppColors.screenColor,
         body: Padding(
           padding:
