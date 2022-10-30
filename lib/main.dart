@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodie/components/colors.dart';
-import 'package:foodie/screens/search_result_screen.dart';
+import 'package:foodie/screens/welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
               primary: AppColors.screenColor,
             ),
       ),
-      home: const SearchResultScreen(),
+      home: const WelcomeScreen(),
     );
   }
 }

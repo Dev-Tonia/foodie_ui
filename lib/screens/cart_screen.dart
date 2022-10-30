@@ -4,6 +4,7 @@ import 'package:foodie/components/constant.dart';
 import 'package:foodie/widgets/custom_button.dart';
 
 import '../widgets/cart_item.dart';
+import '../widgets/custom_appbar.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);
@@ -11,6 +12,11 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(
+        leaddingOnTap: () {},
+        leadingIcon: Icons.arrow_back_ios,
+        title: 'Cart',
+      ),
       backgroundColor: AppColors.screenColor,
       body: SafeArea(
         child: Padding(
@@ -23,18 +29,6 @@ class CartScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  const Icon(
-                    Icons.arrow_back_ios,
-                  ),
-                  AppConstant.searchScreenSpacer(width: 100),
-                  Text(
-                    'Cart',
-                    style: AppConstant.textStyle(),
-                  ),
-                ],
-              ),
               AppConstant.searchScreenSpacer(height: 61),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

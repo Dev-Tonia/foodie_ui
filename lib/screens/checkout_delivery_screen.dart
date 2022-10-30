@@ -5,6 +5,7 @@ import 'package:foodie/widgets/custom_button.dart';
 import '../components/constant.dart';
 import '../utils/enums.dart';
 import '../widgets/checkout_card.dart';
+import '../widgets/custom_appbar.dart';
 
 class CheckoutDeliveryScreen extends StatelessWidget {
   const CheckoutDeliveryScreen({Key? key}) : super(key: key);
@@ -13,6 +14,11 @@ class CheckoutDeliveryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      appBar: CustomAppBar(
+        leaddingOnTap: () {},
+        leadingIcon: Icons.arrow_back_ios,
+        title: 'Checkout',
+      ),
       backgroundColor: AppColors.screenColor,
       body: SingleChildScrollView(
         child: Padding(
@@ -21,17 +27,6 @@ class CheckoutDeliveryScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  const Icon(
-                    Icons.arrow_back_ios,
-                  ),
-                  const SizedBox(
-                    width: 100,
-                  ),
-                  Text('Checkout', style: AppConstant.textStyle())
-                ],
-              ),
               AppConstant.searchScreenSpacer(height: 42),
               Text(
                 'Delivery',
@@ -144,7 +139,10 @@ class CheckoutDeliveryScreen extends StatelessWidget {
                 ],
               ),
               AppConstant.searchScreenSpacer(height: 48),
-              const CustomButton(title: "Proceed to payment")
+              CustomButton(
+                title: "Proceed to payment",
+                onPressed: () {},
+              )
             ],
           ),
         ),

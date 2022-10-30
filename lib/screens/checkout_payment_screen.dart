@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodie/components/colors.dart';
 import 'package:foodie/screens/proceed.dart';
+import 'package:foodie/widgets/custom_appbar.dart';
 import 'package:foodie/widgets/custom_button.dart';
 
 import '../components/constant.dart';
@@ -20,6 +21,11 @@ class _CheckoutPaymentScreenState extends State<CheckoutPaymentScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: CustomAppBar(
+          leaddingOnTap: () {},
+          leadingIcon: Icons.arrow_back_ios,
+          title: 'Checkout',
+        ),
         backgroundColor: AppColors.screenColor,
         body: SingleChildScrollView(
           child: Padding(

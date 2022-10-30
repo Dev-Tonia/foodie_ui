@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:foodie/components/colors.dart';
 
 import '../components/constant.dart';
+import '../widgets/custom_appbar.dart';
 
 class Search404Screen extends StatelessWidget {
   const Search404Screen({Key? key}) : super(key: key);
@@ -9,25 +11,14 @@ class Search404Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      appBar: CustomAppBar(
+        leaddingOnTap: () {},
+        leadingIcon: Icons.arrow_back_ios,
+        title: 'Spicy chieckns',
+      ),
+      backgroundColor: AppColors.screenColor,
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 50.0, top: 10),
-            child: Row(
-              children: [
-                const Icon(
-                  Icons.arrow_back_ios,
-                ),
-                const SizedBox(
-                  width: 100,
-                ),
-                Text(
-                  'Spicy chieckns',
-                  style: AppConstant.textStyle(),
-                )
-              ],
-            ),
-          ),
           AppConstant.searchScreenSpacer(height: 220),
           Center(
             child: Column(

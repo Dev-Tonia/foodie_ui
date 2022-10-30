@@ -38,7 +38,10 @@ class InternetFailureScreen extends StatelessWidget {
                 ),
               ),
               AppConstant.searchScreenSpacer(height: 80),
-              const CustomButton(title: 'Try again')
+              CustomButton(
+                title: 'Try again',
+                onPressed: () {},
+              )
             ],
           ),
         ),

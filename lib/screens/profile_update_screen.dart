@@ -4,6 +4,7 @@ import 'package:foodie/components/constant.dart';
 import 'package:foodie/widgets/custom_button.dart';
 import 'package:foodie/widgets/personal_details_card.dart';
 
+import '../widgets/custom_appbar.dart';
 import '../widgets/profile_actions.dart';
 
 class ProfileUpdateScreen extends StatelessWidget {
@@ -12,6 +13,10 @@ class ProfileUpdateScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(
+        leaddingOnTap: () {},
+        leadingIcon: Icons.arrow_back_ios,
+      ),
       backgroundColor: AppColors.screenColor,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -25,9 +30,6 @@ class ProfileUpdateScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Icon(
-                  Icons.arrow_back_ios,
-                ),
                 AppConstant.searchScreenSpacer(height: 46),
                 Text(
                   'My profile',
@@ -80,7 +82,10 @@ class ProfileUpdateScreen extends StatelessWidget {
                   onchange: () {},
                 ),
                 AppConstant.searchScreenSpacer(height: 59),
-                const CustomButton(title: 'Update')
+                CustomButton(
+                  title: 'Update',
+                  onPressed: () {},
+                )
               ],
             ),
           ),

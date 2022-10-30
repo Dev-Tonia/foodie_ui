@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodie/components/colors.dart';
+import 'package:foodie/screens/home_screen.dart';
 import 'package:foodie/widgets/custom_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -71,11 +72,17 @@ class WelcomeScreen extends StatelessWidget {
                     padding:
                         const EdgeInsets.only(bottom: 10, left: 50, right: 50),
                     child: CustomButton(
-                      title: 'Get starteed',
-                      color: Colors.white,
-                      textcolor: AppColors.primaryColor,
-                      onPressed: () {},
-                    ),
+                        title: 'Get starteed',
+                        color: Colors.white,
+                        textcolor: AppColors.primaryColor,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomeScreen(),
+                            ),
+                          );
+                        }),
                   ),
                 ],
               ),

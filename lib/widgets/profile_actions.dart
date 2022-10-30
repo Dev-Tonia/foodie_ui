@@ -24,9 +24,12 @@ class ProfileActions extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Text(
-              title,
-              style: AppConstant.textStyle(),
+            Padding(
+              padding: const EdgeInsets.only(left: 23.0),
+              child: Text(
+                title,
+                style: AppConstant.textStyle(),
+              ),
             ),
             const Spacer(),
             IconButton(
